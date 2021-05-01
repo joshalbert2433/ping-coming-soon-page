@@ -14,11 +14,6 @@
 
 html {
     font-family: 'Libre Franklin', sans-serif;
-    /* font-size: 20px; */
-}
-
-html, body {
-    /* height: 100%; */
 }
 
 .main-wrapper > * {
@@ -71,7 +66,16 @@ input {
 .invalid {
     border: 1px solid var(--redLight);
     color: black;
-    /* content: "example@email/com"; */
+}
+
+.error-msg {
+    display: none;
+    text-align: center;
+    margin-top: .7rem;
+    color: var(--redLight);
+    font-style: italic;
+    font-size: .9rem;
+    margin-bottom: 1.2rem;
 }
 
 .notify-button {
@@ -88,7 +92,6 @@ input {
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .2);
 }
 
-/* .notify-button:focus, */
 .notify-button:hover {
     opacity: .8;
 }
@@ -115,9 +118,7 @@ input {
 
 .icon-container > * {
     padding: .5rem;
-    /* background-color: red; */
     border-radius: 50%;
-    /* font-size: 2rem; */
     border: 1px solid rgba(0, 0, 0, .1);
     display: flex;
     align-items: center;
@@ -168,25 +169,27 @@ input {
     }
 
     .email-form {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        padding: 0;
-        /* width: 100%; */
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: 
+        "email button"
+        "error .";
+        gap: 1rem;
     }
 
-    .email-form > * {
-        /* height: 60px; */
-    }
+    #email {grid-area: email;}
+    .error-msg {grid-area: error;}
+    .notify-button {grid-area: button;}
 
-    input {
-        width: 60%;
+    .error-msg {
+        text-align: initial;
+        transform: translateY(-25px);
+        font-size: .7rem;
+        margin-left: 2.3rem;
     }
 
     .notify-button {
-        width: 30%;
-        margin: 0;
-        
+        margin: 0;     
     }
 
     .illustration img {

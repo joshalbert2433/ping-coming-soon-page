@@ -16,8 +16,9 @@
         <h1>We are launching <span>soon!</span></h1>
         <small>Subscribe and get notified</small>
         <form action="#" class="email-form">
-          <input type="email" class="invalid" placeholder="Your email address...">
-          <a href="#" class="notify-button">Notify Me</a>
+          <input type="email" id="email" placeholder="Your email address...">
+          <small class="error-msg">Please provide valid email address</small>
+          <a href="#" class="notify-button" onclick="ValidateEmail()">Notify Me</a>
         </form>
     </header>
     <figure class="illustration">
@@ -49,5 +50,6 @@
       <small>&copy; Copyright Ping. All rights reserved.</small>
     </footer>
   </main>
+  <script src="./js/script.js"></script>
 </body>
 </html>
